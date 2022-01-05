@@ -38,6 +38,7 @@ plot(x=canada$year,y=canada$gdp,type = "p",
 ####Analysis#####
 model <- lm(gdp~year,data=canada)
 summary(model)
+drop1(model, test = "F")
 
 ####Make Figures#####
 
@@ -54,6 +55,9 @@ plot(x=canada$year,y=canada$gdp,type = "p",
      main="Canada")
 abline(model,lty=2)
 dev.off()
+
+#that's done
+
 
 
 # final step, 'commit' any changes (i.e. the creation of the 'plots' folder and our snazy plot)
